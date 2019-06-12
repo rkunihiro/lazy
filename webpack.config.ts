@@ -4,7 +4,7 @@ import webpack from "webpack";
 import WebpackDevServer from "webpack-dev-server";
 
 const entry: webpack.Entry = {
-    bundle: "./src/index.ts",
+    bundle: "./src/index.tsx",
 };
 
 const output: webpack.Output = {

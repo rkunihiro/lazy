@@ -1,3 +1,7 @@
+import * as React from "react";
+import * as ReactDOM from "react-dom";
+
+import { App } from "./app";
 import "./index.html";
 
 const callback: IntersectionObserverCallback = (entries: IntersectionObserverEntry[], observer: IntersectionObserver): void => {
@@ -16,7 +20,13 @@ const options: IntersectionObserverInit = {
 };
 const observer = new IntersectionObserver(callback, options);
 
-const list = document.querySelectorAll(".article");
-list.forEach((el) => {
-    observer.observe(el);
-});
+// const list = document.querySelectorAll(".article");
+// list.forEach((el) => {
+//     observer.observe(el);
+// });
+
+const container = document.querySelector("#root");
+const element = (
+    <App observer={observer} />
+);
+ReactDOM.render(element, container);
